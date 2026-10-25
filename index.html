@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GUI LUXURY | Perfumaria</title>
+
+    <meta name="description" content="Conheça a GUI Essence, sua perfumaria de estilo e sofisticação.">
+
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Arquivo JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <a href="#inicio" class="logo">
+            GUI LUXURY
+            <span>PERFUMARIA</span>
+        </a>
+
+        <nav class="menu" id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Perfumes</a>
+            <a href="#sobre">Sobre nós</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <button
+            class="menu-mobile"
+            id="menuMobile"
+            aria-label="Abrir menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- BANNER -->
+        <section class="banner" id="inicio">
+
+            <div class="banner-conteudo">
+
+                <p class="destaque">SUA ESSÊNCIA, SEU ESTILO</p>
+
+                <h1>Uma fragrância que fala por você.</h1>
+
+                <p>
+                    Descubra,  perfumes marcantes para transformar
+                    momentos especiais em lembranças inesquecíveis.
+                </p>
+
+                <a href="#produtos" class="botao">
+                    Conheça os perfumes
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- PRODUTOS -->
+        <section class="produtos secao" id="produtos">
+
+            <p class="destaque">NOSSA SELEÇÃO</p>
+
+            <h2>Perfumes em destaque</h2>
+
+            <p class="descricao">
+                Escolha a fragrância que combina com você.
+            </p>
+
+            <input
+                type="search"
+                id="busca"
+                class="campo-busca"
+                placeholder="Pesquisar perfume..."
+                aria-label="Pesquisar perfume">
+
+            <div class="grade-produtos" id="gradeProdutos">
+
+                <!-- PRODUTO 1 -->
+                <article class="produto" data-nome="Essence Gold">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEm92qOT3gulyzuhnkKa0vIH2vlQ-W3E5as0QnSkpXeQ&s=10">
+
+                    <div class="produto-info">
+
+                        <h3>The blend bourbon</h3>
+
+                        <p>
+                            Uma fragrância elegante e marcante.
+                        </p>
+
+                        <span class="preco">£143.000 </span>
+
+                        <button
+                            class="botao comprar"
+                            data-produto="Essence Gold">
+                            Tenho interesse
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- PRODUTO 2 -->
+                <article class="produto" data-nome="Black Intense">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=700&q=80"
+                        alt="Frasco de perfume Black Intense">
+
+                    <div class="produto-info">
+
+                        <h3>Black Intense</h3>
+
+                        <p>
+                            Personalidade e sofisticação em cada nota.
+                        </p>
+
+                        <span class="preco">R$ 189,90</span>
+
+                        <button
+                            class="botao comprar"
+                            data-produto="Black Intense">
+                            Tenho interesse
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- PRODUTO 3 -->
+                <article class="produto" data-nome="Floral Dream">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80"
+                        alt="Frasco de perfume Floral Dream">
+
+                    <div class="produto-info">
+
+                        <h3>Floral Dream</h3>
+
+                        <p>
+                            Leveza e delicadeza para o seu dia.
+                        </p>
+
+                        <span class="preco">R$ 129,90</span>
+
+                        <button
+                            class="botao comprar"
+                            data-produto="Floral Dream">
+                            Tenho interesse
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p id="semResultados" class="sem-resultados" hidden>
+                Nenhum perfume encontrado.
+            </p>
+
+        </section>
+
+        <!-- SOBRE A EMPRESA -->
+        <section class="sobre secao" id="sobre">
+
+            <div>
+
+                <p class="destaque">SOBRE A GUI ESSENCE</p>
+
+                <h2>Mais que um perfume, uma identidade.</h2>
+
+                <p>
+                    A GUI LUXURY nasceu para quem valoriza o estilo,
+                    a confiança e o poder de uma boa fragrância.
+                    Encontre aromas para acompanhar cada momento.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CONTATO -->
+        <section class="contato secao" id="contato">
+
+            <p class="destaque">FALE CONOSCO</p>
+
+            <h2>Encontre sua próxima fragrância.</h2>
+
+            <p>
+                Entre em contato para consultar produtos e preços.
+            </p>
+
+            <a
+                href="https://wa.me/"
+                class="botao"
+                id="contatoWhatsApp">
+                Fale pelo WhatsApp
+            </a>
+
+            <p class="aviso">
+                Configure o número de WhatsApp no arquivo JavaScript.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <a href="#inicio" class="logo">
+            GUI LUXURY
+            <span>PERFUMARIA</span>
+        </a>
+
+        <p>
+            © <span id="ano"></span> LUXURY.
+            Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+</body>
+</html>
