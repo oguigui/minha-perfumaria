@@ -110,6 +110,7 @@ h1 em, h2 em { color: var(--dourado-claro); font-weight: 400; }
 .manifesto-imagem img { width: min(70%, 330px); filter: drop-shadow(0 22px 25px rgba(0,0,0,.35)); }
 .imagem-legenda { position: absolute; bottom: 18px; color: var(--dourado-claro); font-size: 0.5rem; letter-spacing: 3px; }
 .manifesto-texto h2 { margin-bottom: 24px; }
+/* O filho direto (>) aplica o estilo aos parágrafos da apresentação, sem alterar textos de outros componentes dentro da seção. */
 .manifesto-texto > p:not(.sobretitulo) { color: var(--texto-suave); font-size: 0.75rem; line-height: 2; }
 .link-seta { display: inline-flex; gap: 18px; margin-top: 20px; padding-bottom: 8px; border-bottom: 1px solid var(--dourado); color: var(--dourado-claro); font-size: 0.6875rem; }
 .link-seta span { font-size: 1.0625rem; line-height: 1; }
@@ -233,7 +234,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--dourado); }
 @media (max-width: 720px) { .audio-marca { grid-template-columns: 1fr; gap: 22px; } }
 
 
-/* O combinador filho direto limita o estilo aos parágrafos da seção institucional, sem atingir textos internos de componentes. */
+/* Evita que o conteúdo principal force a largura da página em telas pequenas. */
 #conteudo { min-width: 0; }
 .valores-marca { list-style-type: square; }
 .notas-colecao { list-style-type: none; }
