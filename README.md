@@ -27,7 +27,7 @@ A ideia da GUI Luxury é apresentar algumas fragrâncias fictícias, permitir qu
 - Filtrar os produtos por categoria e por preço máximo.
 - Abrir o menu de navegação e usar os links das seções.
 - Consultar o resumo do catálogo e visualizar o gráfico.
-- Clicar em **Executar análise interativa**, informar um preço e escolher se quer listar os produtos ou ver um resumo.
+- Clicar em **Consultar perfumes por preço**, informar um valor e escolher se quer listar os produtos ou ver um resumo.
 - Reproduzir a pequena assinatura sonora da página.
 
 ## Sobre os dados
