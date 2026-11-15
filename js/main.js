@@ -139,11 +139,15 @@ function renderizarProdutos(lista) {
 function filtrarProdutos() {
   const termo = campoBusca.value.trim().toLocaleLowerCase("pt-BR");
   const categoriaSelecionada = filtroCategoria.value;
+  // A entrada chega como texto; Number converte o valor para comparação numérica.
+  const precoDigitado = Number(campoPrecoMaximo.value);
+  const temLimiteDePreco = campoPrecoMaximo.value.trim() !== "" && Number.isFinite(precoDigitado);
 
   const resultado = produtos.filter(function (produto) {
     const correspondeNome = produto.nome.toLocaleLowerCase("pt-BR").includes(termo);
     const correspondeCategoria = categoriaSelecionada === "Todos" || produto.categoria === categoriaSelecionada;
-    return correspondeNome && correspondeCategoria;
+    const correspondePreco = !temLimiteDePreco || produto.preco <= precoDigitado;
+    return correspondeNome && correspondeCategoria && correspondePreco;
   });
 
   renderizarProdutos(resultado);
