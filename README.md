@@ -1,38 +1,40 @@
 # GUI Luxury — Perfumaria
 
-A GUI Luxury é uma perfumaria fictícia criada como Projeto Integrador da disciplina de Desenvolvimento Front-end para Web.
-O site apresenta um catálogo de fragrâncias, filtros de busca, informações sobre a marca e um formulário de atendimento.
-O projeto foi desenvolvido com HTML5 semântico, CSS3 responsivo e JavaScript puro, sem dependência de frameworks.
-A proposta é praticar estruturação de páginas, acessibilidade, layout, manipulação do DOM e análise de dados.
+Este é o projeto que estou desenvolvendo para a disciplina de Desenvolvimento Front-end para Web. Escolhi criar uma perfumaria porque queria trabalhar com um catálogo de produtos e montar uma página com uma identidade visual própria.
 
-## Como visualizar
+A ideia da GUI Luxury é apresentar algumas fragrâncias fictícias, permitir que a pessoa pesquise os produtos e filtre por categoria ou preço. Também coloquei uma parte sobre a marca e um formulário de contato para demonstrar como seria o atendimento.
 
-1. Clone ou baixe este repositório.
-2. Abra o arquivo `index.html` no navegador.
-3. Para testar o formulário, é necessário ter o WhatsApp disponível no dispositivo.
+## Como abrir
 
-## Organização dos arquivos
+1. Baixe o projeto ou clone este repositório.
+2. Abra a pasta no VS Code.
+3. Abra o arquivo `index.html` no navegador. Se preferir, use a extensão Live Server.
+4. Para testar o formulário, configure primeiro o número de WhatsApp indicado em `js/main.js`.
 
-- `index.html`: estrutura e conteúdo da página.
-- `css/reset.css`: reset de margens e box model.
-- `css/style.css`: identidade visual, Flexbox, Grid e responsividade.
-- `js/main.js`: catálogo, filtros, formulário, análise e gráfico em Canvas.
-- `js/logica.js`: mini-analisador interativo com prompt, condicionais, switch e laços.
-- `assets/images/`: ilustração SVG usada localmente no projeto.
+## Pastas e arquivos
 
-## Recursos estudados aplicados
+- `index.html` — conteúdo e estrutura da página.
+- `css/reset.css` — ajustes iniciais para deixar os elementos com um comportamento mais previsível.
+- `css/style.css` — cores, fontes, espaçamentos e adaptação para telas menores.
+- `js/main.js` — produtos, pesquisa, filtros, formulário e gráfico.
+- `js/logica.js` — exercício de lógica com consulta de preços, laços e resumo dos produtos.
+- `assets/images/` — imagem SVG usada no site.
 
-- HTML semântico, navegação por âncoras, formulário com labels, fieldset, legend e validação nativa.
-- Imagem local com texto alternativo, SVG acessível e Canvas com conteúdo de fallback.
-- Assinatura sonora original em dois formatos (MP3 e OGG), com preload="none" e fallback textual.
-- CSS com variáveis, box model, Flexbox, Grid responsivo, pseudo-classes, sticky, dropdown e foco visível.
-- JavaScript com variáveis, condicionais, switch, for, for...of, while, funções, arrays, objetos, map, filter, reduce e atualização do DOM.
-- Catálogo com cinco produtos fictícios, pesquisa, filtro por categoria, tabela e resumo visual.
+## O que dá para testar
 
-## Multimídia
+- Pesquisar uma fragrância pelo nome.
+- Filtrar os produtos por categoria e por preço máximo.
+- Abrir o menu de navegação e usar os links das seções.
+- Consultar o resumo do catálogo e visualizar o gráfico.
+- Clicar em **Executar análise interativa**, informar um preço e escolher se quer listar os produtos ou ver um resumo.
+- Reproduzir a pequena assinatura sonora da página.
 
-A assinatura sonora é um pequeno efeito original sintetizado para o projeto e está incorporada como fontes MP3 e OGG no elemento `<audio>`. O navegador só tenta carregar o áudio quando a pessoa decide reproduzi-lo (`preload="none"`); o JavaScript demonstra a escolha de formato com `canPlayType()`.
+## Sobre os dados
 
-## Observação
+Os cinco perfumes, os preços e as quantidades em estoque são exemplos criados para o trabalho. Eles não representam produtos reais nem uma loja em funcionamento.
 
-Os nomes, preços e estoques são dados demonstrativos para a atividade acadêmica. O formulário abre uma conversa no WhatsApp após configurar o número comercial no início da função `abrirWhatsApp`, em `js/main.js`, usando DDI + DDD + número (somente dígitos). O projeto não armazena dados em um servidor.
+O formulário usa validação do próprio navegador e prepara uma mensagem para o WhatsApp. Para que o envio funcione, é preciso trocar o texto `SEU_NUMERO_COM_DDI` em `js/main.js` pelo número comercial correto, com DDI e DDD e somente números. O site não possui servidor nem salva os dados enviados.
+
+## Tecnologias
+
+Usei HTML, CSS e JavaScript sem framework. No layout, pratiquei Flexbox e Grid; no JavaScript, trabalhei com arrays, objetos, funções, condicionais, laços, eventos e manipulação do DOM.
