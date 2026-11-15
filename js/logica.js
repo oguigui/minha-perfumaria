@@ -1,4 +1,14 @@
-// GUI Luxury — atividade de lógica JavaScript (Aulas 09 e 10).
+// Projeto: catálogo da GUI Luxury.
+// Entrada: preço máximo digitado pela pessoa e opção escolhida no menu.
+// Processamento: filtrar perfumes, separar por faixa de preço e somar valores e estoque.
+// Saída: lista de produtos na página e resumo no console.
+// Passos do algoritmo:
+// 1. Pedir o preço máximo e conferir se a entrada é válida.
+// 2. Separar os perfumes que cabem nesse valor.
+// 3. Mostrar um menu para listar, resumir ou sair.
+// 4. Repetir o menu até a pessoa escolher sair.
+// Atividade de lógica JavaScript — Aulas 09 e 10.
+
 "use strict";
 
 // A lista "produtos" é definida em main.js, carregado antes deste arquivo.
@@ -70,7 +80,8 @@ function mostrarProdutosLogica(lista, limite) {
       perfume: produto.nome,
       categoria: nomeCategoriaLogica(produto.categoria),
       preco: produto.preco,
-      faixa: classificarFaixaPreco(produto.preco)
+      faixa: classificarFaixaPreco(produto.preco),
+      disponibilidade: produto.estoque > 0 ? "Disponível" : "Esgotado"
     });
   }
 
@@ -108,11 +119,12 @@ function mostrarProdutosLogica(lista, limite) {
   console.log("Contagem por categoria:", contagemCategorias);
 }
 
-// Teste de mesa documentado (limite = R$ 350,00):
-// Volta 1: Rose Élégance (319,90) -> Clássico; total de itens = 1.
-// Volta 2: Noir Intense (349,90) -> Clássico; total de itens = 2.
-// Volta 3: Golden Hour (289,90) -> Clássico; total de itens = 3.
-// A saída do console.table deve mostrar os mesmos nomes e faixas dessas três voltas.
+// Teste de mesa — limite informado: R$ 350,00.
+// Volta | Produto       | Preço     | Passa no filtro? | Faixa
+// 1     | Rose Élégance | R$ 319,90 | Sim              | Clássico
+// 2     | Noir Intense  | R$ 349,90 | Sim              | Clássico
+// 3     | Golden Hour   | R$ 289,90 | Sim              | Clássico
+// As três primeiras linhas do console.table devem mostrar esses produtos nessa ordem.
 
 const botaoAnaliseLogica = document.getElementById("executarAnaliseLogica");
 if (botaoAnaliseLogica) {
@@ -134,10 +146,11 @@ if (botaoAnaliseLogica) {
       return produto.preco <= limite;
     });
 
-    // Menu opcional com do...while: a condição é atualizada a cada escolha.
+    // O menu fica aberto até a pessoa escolher a opção 3.
     let opcao = "";
     do {
-      opcao = window.prompt("GUI LUXURY — ANÁLISE\n1 — Listar perfumes encontrados\n2 — Mostrar resumo\n3 — Sair") ?? "3";
+      const resposta = window.prompt("GUI LUXURY — ANÁLISE\n1 — Listar perfumes encontrados\n2 — Mostrar resumo\n3 — Sair") ?? "3";
+      opcao = resposta.trim();
 
       switch (opcao) {
         case "1":
@@ -161,5 +174,5 @@ if (botaoAnaliseLogica) {
   });
 }
 
-// Teste rápido das funções com mais de um valor antes da interação com a página.
+// Alguns valores para conferir as três faixas no console ao abrir a página.
 console.table([classificarFaixaPreco(199.90), classificarFaixaPreco(319.90), classificarFaixaPreco(389.90)]);
