@@ -8,7 +8,7 @@ const produtos = [
   { nome: "Noir Intense", preco: 349.90, categoria: "Masculino", estoque: 3, descricao: "Uma composição amadeirada, intensa e marcante.", imagem: "https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=700&q=80" },
   { nome: "Golden Hour", preco: 289.90, categoria: "Unissex", estoque: 0, descricao: "Aroma envolvente para acompanhar bons momentos.", imagem: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80" },
   { nome: "Jardin Blanc", preco: 259.90, categoria: "Feminino", estoque: 12, descricao: "Leveza cítrica e frescor para todos os dias.", imagem: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80" },
-  { nome: "Bois Royal", preco: 389.90, categoria: "Masculino", estoque: 5, descricao: "Madeiras elegantes com personalidade e presença.", imagem: "https://images.unsplash.com/photo-159香?auto=format&fit=crop&w=700&q=80" }
+  { nome: "Bois Royal", preco: 389.90, categoria: "Masculino", estoque: 5, descricao: "Madeiras elegantes com personalidade e presença.", imagem: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80" }
 ];
 
 // Elementos usados em mais de uma função ficam reunidos aqui.
