@@ -35,4 +35,4 @@ A assinatura sonora é um pequeno efeito original sintetizado para o projeto e e
 
 ## Observação
 
-Os nomes, preços e estoques são dados demonstrativos para a atividade acadêmica. O formulário abre uma conversa no WhatsApp configurado no JavaScript; ele não armazena dados em um servidor.
+Os nomes, preços e estoques são dados demonstrativos para a atividade acadêmica. O formulário abre uma conversa no WhatsApp após configurar o número comercial no início da função `abrirWhatsApp`, em `js/main.js`, usando DDI + DDD + número (somente dígitos). O projeto não armazena dados em um servidor.
