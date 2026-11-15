@@ -130,15 +130,15 @@ const botaoAnaliseLogica = document.getElementById("executarAnaliseLogica");
 if (botaoAnaliseLogica) {
   botaoAnaliseLogica.addEventListener("click", function () {
     // A entrada do prompt é texto; Number converte antes de qualquer comparação.
-    const entrada = window.prompt("Qual o preço máximo que deseja considerar? (Ex.: 350)");
+    const entrada = window.prompt("Qual é o valor máximo que você pretende gastar? (Ex.: 350)");
     if (entrada === null || entrada.trim() === "") {
-      document.getElementById("resultadoLogica").textContent = "Análise cancelada. Informe um valor para continuar.";
+      document.getElementById("resultadoLogica").textContent = "Tudo bem, a consulta foi cancelada.";
       return;
     }
 
     const limite = Number(entrada);
     if (!Number.isFinite(limite) || limite < 0 || limite > 10000) {
-      window.alert("Digite um número válido entre 0 e 10.000.");
+      window.alert("Digite um valor entre 0 e 10.000 para continuar.");
       return;
     }
 
@@ -149,7 +149,7 @@ if (botaoAnaliseLogica) {
     // O menu fica aberto até a pessoa escolher a opção 3.
     let opcao = "";
     do {
-      const resposta = window.prompt("GUI LUXURY — ANÁLISE\n1 — Listar perfumes encontrados\n2 — Mostrar resumo\n3 — Sair") ?? "3";
+      const resposta = window.prompt("O que você quer fazer?\n1 — Ver os perfumes\n2 — Ver um resumo\n3 — Encerrar") ?? "3";
       opcao = resposta.trim();
 
       switch (opcao) {
@@ -164,10 +164,10 @@ if (botaoAnaliseLogica) {
           break;
         }
         case "3":
-          document.getElementById("resultadoLogica").textContent = "Análise finalizada. Obrigado por explorar a GUI Luxury!";
+          document.getElementById("resultadoLogica").textContent = "Consulta encerrada. Até a próxima!";
           break;
         default:
-          window.alert("Opção inválida. Escolha 1, 2 ou 3.");
+          window.alert("Essa opção não existe. Digite 1, 2 ou 3.");
           break;
       }
     } while (opcao !== "3");
