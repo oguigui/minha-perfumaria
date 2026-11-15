@@ -14,8 +14,10 @@ A proposta é praticar estruturação de páginas, acessibilidade, layout, manip
 ## Organização dos arquivos
 
 - `index.html`: estrutura e conteúdo da página.
+- `css/reset.css`: reset de margens e box model.
 - `css/style.css`: identidade visual, Flexbox, Grid e responsividade.
 - `js/main.js`: catálogo, filtros, formulário, análise e gráfico em Canvas.
+- `js/logica.js`: mini-analisador interativo com prompt, condicionais, switch e laços.
 - `assets/images/`: ilustração SVG usada localmente no projeto.
 
 ## Recursos estudados aplicados
@@ -24,12 +26,12 @@ A proposta é praticar estruturação de páginas, acessibilidade, layout, manip
 - Imagem local com texto alternativo, SVG acessível e Canvas com conteúdo de fallback.
 - Assinatura sonora original em dois formatos (MP3 e OGG), com preload="none" e fallback textual.
 - CSS com variáveis, box model, Flexbox, Grid responsivo, pseudo-classes, sticky, dropdown e foco visível.
-- JavaScript com variáveis, condicionais, switch, for...of, while, funções, arrays, objetos, map, filter, reduce e atualização do DOM.
+- JavaScript com variáveis, condicionais, switch, for, for...of, while, funções, arrays, objetos, map, filter, reduce e atualização do DOM.
 - Catálogo com cinco produtos fictícios, pesquisa, filtro por categoria, tabela e resumo visual.
 
 ## Multimídia
 
-A assinatura sonora é um pequeno efeito original sintetizado para o projeto e está incorporada como fontes MP3 e OGG no elemento `<audio>`. O navegador só tenta carregar o áudio quando a pessoa decide reproduzi-lo (`preload="none"`).
+A assinatura sonora é um pequeno efeito original sintetizado para o projeto e está incorporada como fontes MP3 e OGG no elemento `<audio>`. O navegador só tenta carregar o áudio quando a pessoa decide reproduzi-lo (`preload="none"`); o JavaScript demonstra a escolha de formato com `canPlayType()`.
 
 ## Observação
 
