@@ -285,7 +285,12 @@ function desenharGrafico(dados) {
 
 function abrirWhatsApp(mensagem) {
   // Número de atendimento configurado no projeto.
-  const telefoneWhatsApp = "5583986946326";
+  // Configure o número comercial com DDI e DDD, sem espaços ou símbolos.
+  const telefoneWhatsApp = "SEU_NUMERO_COM_DDI";
+  if (!/^\d{12,13}$/.test(telefoneWhatsApp)) {
+    window.alert("Para ativar o atendimento, configure o número comercial no arquivo js/main.js.");
+    return;
+  }
   const endereco = "https://wa.me/" + telefoneWhatsApp + "?text=" + encodeURIComponent(mensagem);
   window.open(endereco, "_blank", "noopener,noreferrer");
 }
