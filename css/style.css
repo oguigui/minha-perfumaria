@@ -210,3 +210,12 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--dourado); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Complementos do filtro numérico e da lista institucional. */
+.filtro-preco { display: flex; align-items: center; gap: 10px; min-height: 45px; padding: 0 12px; border: 1px solid var(--borda); color: var(--texto-suave); font-size: 10px; white-space: nowrap; }
+.filtro-preco input { width: 125px; min-height: 38px; border: 0; outline: 0; background: transparent; color: var(--texto); font-size: 11px; }
+.valores-marca { display: grid; gap: 8px; margin: 22px 0; padding-left: 18px; color: var(--texto-suave); font-size: 11px; }
+.valores-marca li::marker { color: var(--dourado); }
+.fonte-externa { color: var(--texto-suave); font-size: 11px; line-height: 1.8; }
+.fonte-externa a { color: var(--dourado-claro); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 720px) { .filtro-preco { width: 100%; justify-content: space-between; } }
