@@ -1,0 +1,11 @@
+# Dependências
+node_modules/
+
+# Variáveis e credenciais locais
+.env
+.env.*
+
+# Arquivos do sistema e editor
+.DS_Store
+Thumbs.db
+.vscode/
