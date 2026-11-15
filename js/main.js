@@ -348,13 +348,24 @@ document.getElementById("formContato").addEventListener("submit", function (even
   abrirWhatsApp(mensagem);
 });
 
-// Demonstra a seleção de formato de áudio com canPlayType(), sem forçar a reprodução.
+// Verifica os dois formatos disponíveis sem iniciar a reprodução automaticamente.
 const audioMarca = document.querySelector(".audio-marca audio");
 const compatibilidadeAudio = document.getElementById("compatibilidadeAudio");
 if (audioMarca && compatibilidadeAudio) {
   const suporteMp3 = audioMarca.canPlayType("audio/mpeg");
-  const formatoProvavel = suporteMp3 === "probably" ? "MP3" : suporteMp3 === "maybe" ? "MP3 (suporte provável)" : "MP3 não reconhecido";
-  compatibilidadeAudio.textContent = `Compatibilidade detectada pelo navegador: ${formatoProvavel}.`;
+  const suporteOgg = audioMarca.canPlayType('audio/ogg; codecs="vorbis"');
+  const formatos = [];
+
+  if (suporteMp3 === "probably" || suporteMp3 === "maybe") {
+    formatos.push("MP3");
+  }
+  if (suporteOgg === "probably" || suporteOgg === "maybe") {
+    formatos.push("OGG");
+  }
+
+  compatibilidadeAudio.textContent = formatos.length
+    ? "Formatos reconhecidos pelo navegador: " + formatos.join(" e ") + "."
+    : "O navegador não informou suporte aos formatos MP3 e OGG.";
 }
 
 // Atualiza o ano do rodapé e inicia os componentes da página.
