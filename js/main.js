@@ -317,7 +317,8 @@ document.querySelectorAll("[data-filtro-link]").forEach(function (link) {
 });
 
 campoBusca.addEventListener("input", filtrarProdutos);
-filtroCategoria.addEventListener("change", filtrarProdutos);\ncampoPrecoMaximo.addEventListener("input", filtrarProdutos);
+filtroCategoria.addEventListener("change", filtrarProdutos);
+campoPrecoMaximo.addEventListener("input", filtrarProdutos);
 
 // Formulário validado pelo navegador; os dados seguem para o WhatsApp informado.
 document.getElementById("formContato").addEventListener("submit", function (evento) {
