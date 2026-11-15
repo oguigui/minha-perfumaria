@@ -19,7 +19,7 @@ const campoPrecoMaximo = document.getElementById("precoMaximo");
 const semResultados = document.getElementById("semResultados");
 
 // Converte um valor numérico para o padrão monetário brasileiro.
-function formatarPreco(valor) {
+function formatarPreco(valor = 0) {
   return valor.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL"
@@ -55,6 +55,7 @@ function descreverCategoria(categoria) {
 function criarCard(produto) {
   const artigo = document.createElement("article");
   artigo.className = "produto";
+  artigo.classList.add(produto.estoque === 0 ? "produto-esgotado" : "produto-disponivel");
 
   const imagemArea = document.createElement("div");
   imagemArea.className = "produto-imagem";
@@ -70,6 +71,13 @@ function criarCard(produto) {
   const etiqueta = document.createElement("span");
   etiqueta.className = "produto-etiqueta";
   etiqueta.textContent = classificarEstoque(produto.estoque);
+  if (produto.estoque === 0) {
+    etiqueta.classList.add("estoque-esgotado");
+  } else if (produto.estoque <= 3) {
+    etiqueta.classList.add("estoque-baixo");
+  } else {
+    etiqueta.classList.add("estoque-disponivel");
+  }
 
   imagemArea.append(imagem, etiqueta);
 
@@ -333,6 +341,16 @@ document.getElementById("formContato").addEventListener("submit", function (even
   document.getElementById("feedbackFormulario").textContent = "Abrindo o WhatsApp para continuar seu atendimento...";
   abrirWhatsApp(mensagem);
 });
+
+// Demonstra a seleção de formato de áudio com canPlayType(), sem forçar a reprodução.
+const audioMarca = document.querySelector(".audio-marca audio");
+const compatibilidadeAudio = document.getElementById("compatibilidadeAudio");
+if (audioMarca && compatibilidadeAudio) {
+  const suporteMp3 = audioMarca.canPlayType("audio/mpeg");
+  const suporteOgg = audioMarca.canPlayType('audio/ogg; codecs="vorbis"');
+  const formatoProvavel = suporteMp3 === "probably" ? "MP3" : suporteOgg === "probably" ? "OGG" : suporteMp3 || suporteOgg ? "um dos formatos informados" : "nenhum dos formatos informado";
+  compatibilidadeAudio.textContent = `Compatibilidade detectada pelo navegador: ${formatoProvavel}.`;
+}
 
 // Atualiza o ano do rodapé e inicia os componentes da página.
 document.getElementById("ano").textContent = new Date().getFullYear();
