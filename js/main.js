@@ -15,6 +15,7 @@ const produtos = [
 const gradeProdutos = document.getElementById("gradeProdutos");
 const campoBusca = document.getElementById("buscaProdutos");
 const filtroCategoria = document.getElementById("filtroCategoria");
+const campoPrecoMaximo = document.getElementById("precoMaximo");
 const semResultados = document.getElementById("semResultados");
 
 // Converte um valor numérico para o padrão monetário brasileiro.
@@ -304,7 +305,7 @@ document.querySelectorAll("[data-filtro-link]").forEach(function (link) {
 });
 
 campoBusca.addEventListener("input", filtrarProdutos);
-filtroCategoria.addEventListener("change", filtrarProdutos);
+filtroCategoria.addEventListener("change", filtrarProdutos);\ncampoPrecoMaximo.addEventListener("input", filtrarProdutos);
 
 // Formulário validado pelo navegador; os dados seguem para o WhatsApp informado.
 document.getElementById("formContato").addEventListener("submit", function (evento) {
@@ -341,3 +342,20 @@ window.addEventListener("resize", function () {
   window.clearTimeout(temporizadorRedesenho);
   temporizadorRedesenho = window.setTimeout(mostrarAnalise, 120);
 });
+
+// Destaca no menu a seção que está mais presente na área visível.
+const secoesNavegacao = document.querySelectorAll("main section[id]");
+const linksNavegacao = document.querySelectorAll(".menu a[href^='#']");
+if ("IntersectionObserver" in window) {
+  const observadorSecoes = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (entrada.isIntersecting) {
+        linksNavegacao.forEach(function (link) {
+          const ativo = link.getAttribute("href") === "#" + entrada.target.id;
+          link.classList.toggle("ativo", ativo);
+        });
+      }
+    });
+  }, { rootMargin: "-35% 0px -55% 0px" });
+  secoesNavegacao.forEach(function (secao) { observadorSecoes.observe(secao); });
+}
