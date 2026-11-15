@@ -353,8 +353,7 @@ const audioMarca = document.querySelector(".audio-marca audio");
 const compatibilidadeAudio = document.getElementById("compatibilidadeAudio");
 if (audioMarca && compatibilidadeAudio) {
   const suporteMp3 = audioMarca.canPlayType("audio/mpeg");
-  const suporteOgg = audioMarca.canPlayType('audio/ogg; codecs="vorbis"');
-  const formatoProvavel = suporteMp3 === "probably" ? "MP3" : suporteOgg === "probably" ? "OGG" : suporteMp3 || suporteOgg ? "um dos formatos informados" : "nenhum dos formatos informado";
+  const formatoProvavel = suporteMp3 === "probably" ? "MP3" : suporteMp3 === "maybe" ? "MP3 (suporte provável)" : "MP3 não reconhecido";
   compatibilidadeAudio.textContent = `Compatibilidade detectada pelo navegador: ${formatoProvavel}.`;
 }
 
