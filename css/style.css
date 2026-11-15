@@ -251,3 +251,10 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--dourado); }
 .resultado-logica ul { padding-left: 20px; }
 .resultado-logica li { margin: 5px 0; }
 .compatibilidade-audio { display: block; margin-top: 10px; color: var(--texto-suave); font-size: .7rem; }
+
+table th, table td { padding: 12px 14px; border-bottom: 1px solid var(--borda); }
+table th { color: var(--dourado-claro); font-weight: 700; }
+table tbody tr:nth-child(even) { background: rgba(255,255,255,.025); }
+.resultado-logica li.faixa-essencial { border-left: 2px solid #78947b; padding-left: 10px; }
+.resultado-logica li.faixa-classico { border-left: 2px solid var(--dourado); padding-left: 10px; }
+.resultado-logica li.faixa-exclusivo { border-left: 2px solid #a88dbb; padding-left: 10px; }
