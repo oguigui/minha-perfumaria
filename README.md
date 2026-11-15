@@ -18,7 +18,8 @@ A ideia da GUI Luxury é apresentar algumas fragrâncias fictícias, permitir qu
 - `css/style.css` — cores, fontes, espaçamentos e adaptação para telas menores.
 - `js/main.js` — produtos, pesquisa, filtros, formulário e gráfico.
 - `js/logica.js` — exercício de lógica com consulta de preços, laços e resumo dos produtos.
-- `assets/images/` — imagem SVG usada no site.
+- `assets/images/` — ilustração SVG usada no site.
+- `assets/audio/assinatura-gui-luxury.mp3` — assinatura sonora original em MP3.
 
 ## O que dá para testar
 
@@ -33,7 +34,7 @@ A ideia da GUI Luxury é apresentar algumas fragrâncias fictícias, permitir qu
 
 Os cinco perfumes, os preços e as quantidades em estoque são exemplos criados para o trabalho. Eles não representam produtos reais nem uma loja em funcionamento.
 
-O formulário usa validação do próprio navegador e prepara uma mensagem para o WhatsApp. Para que o envio funcione, é preciso trocar o texto `SEU_NUMERO_COM_DDI` em `js/main.js` pelo número comercial correto, com DDI e DDD e somente números. O site não possui servidor nem salva os dados enviados.
+O formulário usa validação do próprio navegador e prepara uma mensagem para o WhatsApp. O botão de atendimento abre uma conversa no WhatsApp configurado em `js/main.js`. O site não possui servidor nem salva os dados enviados.
 
 ## Tecnologias
 
