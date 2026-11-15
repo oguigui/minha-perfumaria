@@ -1,240 +1,212 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>GUI LUXURY | Perfumaria</title>
-
-    <meta name="description" content="Conheça a GUI Essence, sua perfumaria de estilo e sofisticação.">
-
-    <!-- Arquivo CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Arquivo JavaScript -->
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GUI Luxury: uma seleção especial de fragrâncias para marcar presença em todos os momentos.">
+  <meta name="theme-color" content="#171713">
+  <title>GUI Luxury | Perfumaria</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
-
 <body>
+  <a class="atalho" href="#conteudo">Pular para o conteúdo</a>
 
-    <!-- CABEÇALHO -->
-    <header class="cabecalho">
+  <header class="cabecalho" id="topo">
+    <a class="marca" href="#inicio" aria-label="GUI Luxury, página inicial">
+      <span class="marca-simbolo" aria-hidden="true">G</span>
+      <span class="marca-texto">GUI <strong>LUXURY</strong><small>PERFUMARIA</small></span>
+    </a>
 
-        <a href="#inicio" class="logo">
-            GUI LUXURY
-            <span>PERFUMARIA</span>
-        </a>
+    <button class="menu-mobile" id="menuMobile" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPrincipal">
+      <span></span><span></span><span></span>
+    </button>
 
-        <nav class="menu" id="menu">
-            <a href="#inicio">Início</a>
-            <a href="#produtos">Perfumes</a>
-            <a href="#sobre">Sobre nós</a>
-            <a href="#contato">Contato</a>
-        </nav>
+    <nav class="menu" id="menuPrincipal" aria-label="Navegação principal">
+      <a class="link-menu ativo" href="#inicio">Início</a>
+      <div class="menu-dropdown">
+        <a class="link-menu" href="#produtos">Perfumes <span aria-hidden="true">⌄</span></a>
+        <div class="dropdown-conteudo">
+          <a href="#produtos" data-filtro-link="Feminino">Femininos</a>
+          <a href="#produtos" data-filtro-link="Masculino">Masculinos</a>
+          <a href="#produtos" data-filtro-link="Unissex">Unissex</a>
+        </div>
+      </div>
+      <a class="link-menu" href="#sobre">Nossa essência</a>
+      <a class="link-menu" href="#contato">Contato</a>
+    </nav>
 
-        <button
-            class="menu-mobile"
-            id="menuMobile"
-            aria-label="Abrir menu"
-            aria-expanded="false">
-            ☰
-        </button>
+    <a class="cabecalho-cta" href="#contato">Fale com a gente <span aria-hidden="true">↗</span></a>
+  </header>
 
-    </header>
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+      <div class="hero-fundo" aria-hidden="true"></div>
+      <div class="hero-conteudo">
+        <p class="sobretitulo"><span></span> PERFUMARIA • JOÃO PESSOA</p>
+        <h1 id="titulo-principal">Sua presença<br>tem <em>uma essência.</em></h1>
+        <p class="hero-descricao">Fragrâncias escolhidas para acompanhar histórias, despertar sensações e deixar lembranças por onde você passar.</p>
+        <a class="botao botao-dourado" href="#produtos">Descubra sua fragrância <span aria-hidden="true">→</span></a>
+        <div class="hero-nota"><span>01 / 03</span><span class="linha-nota"></span><span>O luxo está nos detalhes</span></div>
+      </div>
+      <div class="hero-selo" aria-label="Curadoria especial">
+        <span>GUI</span><small>CURADORIA<br>ESPECIAL</small>
+      </div>
+    </section>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main>
+    <section class="beneficios" aria-label="Diferenciais da loja">
+      <p><span aria-hidden="true">✦</span> Seleção especial de fragrâncias</p>
+      <p><span aria-hidden="true">✦</span> Atendimento próximo e personalizado</p>
+      <p><span aria-hidden="true">✦</span> Perfumes para todos os momentos</p>
+    </section>
 
-        <!-- BANNER -->
-        <section class="banner" id="inicio">
+    <section class="secao colecao" id="produtos" aria-labelledby="titulo-produtos">
+      <div class="secao-cabecalho">
+        <div>
+          <p class="sobretitulo">A COLEÇÃO GUI</p>
+          <h2 id="titulo-produtos">Encontre seu <em>próximo favorito.</em></h2>
+        </div>
+        <p class="texto-apoio">Uma seleção de aromas com personalidade. Escolha pelo estilo, explore as notas e encontre aquele que combina com você.</p>
+      </div>
 
-            <div class="banner-conteudo">
+      <div class="filtros">
+        <label class="campo-pesquisa" for="buscaProdutos">
+          <span aria-hidden="true">⌕</span>
+          <input id="buscaProdutos" type="search" placeholder="Buscar uma fragrância..." autocomplete="off">
+        </label>
+        <label class="filtro-categoria" for="filtroCategoria">
+          <span class="sr-only">Filtrar por categoria</span>
+          <select id="filtroCategoria">
+            <option value="Todos">Todas as fragrâncias</option>
+            <option value="Feminino">Femininos</option>
+            <option value="Masculino">Masculinos</option>
+            <option value="Unissex">Unissex</option>
+          </select>
+        </label>
+      </div>
 
-                <p class="destaque">SUA ESSÊNCIA, SEU ESTILO</p>
+      <div class="grade-produtos" id="gradeProdutos" aria-live="polite">
+        <article class="produto-esqueleto"><img src="assets/images/perfume-ilustracao.svg" alt="Ilustração de um frasco de perfume"><p>Carregando fragrâncias...</p></article>
+      </div>
+      <p class="sem-resultados" id="semResultados" hidden>Nenhuma fragrância encontrada. Tente outro nome ou categoria.</p>
+    </section>
 
-                <h1>Uma fragrância que fala por você.</h1>
+    <section class="secao manifesto" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="manifesto-imagem">
+        <img src="assets/images/perfume-ilustracao.svg" alt="Ilustração dourada de um frasco de perfume da GUI Luxury">
+        <span class="imagem-legenda">A ARTE DE SENTIR</span>
+      </div>
+      <div class="manifesto-texto">
+        <p class="sobretitulo">NOSSA ESSÊNCIA</p>
+        <h2 id="titulo-sobre">Mais que perfume.<br><em>Uma forma de ser.</em></h2>
+        <p>A GUI Luxury nasceu da ideia de que uma fragrância pode dizer muito sem precisar de palavras. Por isso, reunimos opções para diferentes estilos, ocasiões e personalidades.</p>
+        <p>Nosso propósito é ajudar você a encontrar um aroma que faça sentido na sua rotina e transforme pequenos momentos em boas lembranças.</p>
+        <a class="link-seta" href="#contato">Conheça nossa seleção <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
 
-                <p>
-                    Descubra,  perfumes marcantes para transformar
-                    momentos especiais em lembranças inesquecíveis.
-                </p>
+    <section class="secao analise" aria-labelledby="titulo-analise">
+      <div class="analise-cabecalho">
+        <div>
+          <p class="sobretitulo">POR DENTRO DA COLEÇÃO</p>
+          <h2 id="titulo-analise">Um olhar sobre <em>as fragrâncias.</em></h2>
+        </div>
+        <p class="texto-apoio">Um resumo do nosso catálogo, atualizado a partir dos produtos cadastrados na página.</p>
+      </div>
+      <div class="painel-analise">
+        <div class="indicadores" id="indicadores" aria-live="polite">
+          <div><span>Fragrâncias</span><strong id="totalProdutos">—</strong></div>
+          <div><span>Valor do catálogo</span><strong id="valorCatalogo">—</strong></div>
+          <div><span>Maior preço</span><strong id="produtoDestaque">—</strong></div>
+        </div>
+        <div class="grafico-area">
+          <div class="grafico-titulo">
+            <h3>Distribuição por família</h3>
+            <span>UNIDADES NO CATÁLOGO</span>
+          </div>
+          <canvas id="graficoCatalogo" width="640" height="260">
+            Gráfico com a quantidade de fragrâncias por categoria. Os dados também estão apresentados na tabela abaixo.
+          </canvas>
+        </div>
+      </div>
+      <div class="tabela-area">
+        <h3>Resumo das fragrâncias</h3>
+        <div class="tabela-rolagem">
+          <table>
+            <caption>Produtos disponíveis no catálogo da GUI Luxury</caption>
+            <thead><tr><th scope="col">Fragrância</th><th scope="col">Categoria</th><th scope="col">Preço</th><th scope="col">Disponibilidade</th></tr></thead>
+            <tbody id="tabelaProdutos">
+              <tr><td colspan="4">Os dados serão carregados junto com o catálogo.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <ul class="notas-colecao">
+        <li>Curadoria de fragrâncias</li>
+        <li>Opções para diferentes estilos</li>
+        <li>Informações claras sobre o catálogo</li>
+      </ul>
+    </section>
 
-                <a href="#produtos" class="botao">
-                    Conheça os perfumes
-                </a>
+    <section class="secao contato" id="contato" aria-labelledby="titulo-contato">
+      <div class="contato-intro">
+        <p class="sobretitulo">VAMOS CONVERSAR?</p>
+        <h2 id="titulo-contato">Seu próximo aroma<br><em>começa aqui.</em></h2>
+        <p>Conte um pouco sobre o que procura. Nossa equipe pode ajudar você a encontrar uma fragrância especial.</p>
+        <div class="contato-detalhe"><span aria-hidden="true">✦</span><span>Atendimento pelo WhatsApp<br><strong>Uma conversa, muitas possibilidades.</strong></span></div>
+      </div>
 
+      <form class="formulario" id="formContato">
+        <fieldset>
+          <legend>Conte para nós o que você procura</legend>
+          <div class="campos-formulario">
+            <div class="campo">
+              <label for="nome">Seu nome</label>
+              <input id="nome" name="nome" type="text" minlength="3" maxlength="70" autocomplete="name" placeholder="Como podemos chamar você?" required>
             </div>
-
-        </section>
-
-        <!-- PRODUTOS -->
-        <section class="produtos secao" id="produtos">
-
-            <p class="destaque">NOSSA SELEÇÃO</p>
-
-            <h2>Perfumes em destaque</h2>
-
-            <p class="descricao">
-                Escolha a fragrância que combina com você.
-            </p>
-
-            <input
-                type="search"
-                id="busca"
-                class="campo-busca"
-                placeholder="Pesquisar perfume..."
-                aria-label="Pesquisar perfume">
-
-            <div class="grade-produtos" id="gradeProdutos">
-
-                <!-- PRODUTO 1 -->
-                <article class="produto" data-nome="Essence Gold">
-
-                    <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEm92qOT3gulyzuhnkKa0vIH2vlQ-W3E5as0QnSkpXeQ&s=10">
-
-                    <div class="produto-info">
-
-                        <h3>The blend bourbon</h3>
-
-                        <p>
-                            Uma fragrância elegante e marcante.
-                        </p>
-
-                        <span class="preco">£143.000 </span>
-
-                        <button
-                            class="botao comprar"
-                            data-produto="Essence Gold">
-                            Tenho interesse
-                        </button>
-
-                    </div>
-
-                </article>
-
-                <!-- PRODUTO 2 -->
-                <article class="produto" data-nome="Black Intense">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=700&q=80"
-                        alt="Frasco de perfume Black Intense">
-
-                    <div class="produto-info">
-
-                        <h3>Black Intense</h3>
-
-                        <p>
-                            Personalidade e sofisticação em cada nota.
-                        </p>
-
-                        <span class="preco">R$ 189,90</span>
-
-                        <button
-                            class="botao comprar"
-                            data-produto="Black Intense">
-                            Tenho interesse
-                        </button>
-
-                    </div>
-
-                </article>
-
-                <!-- PRODUTO 3 -->
-                <article class="produto" data-nome="Floral Dream">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80"
-                        alt="Frasco de perfume Floral Dream">
-
-                    <div class="produto-info">
-
-                        <h3>Floral Dream</h3>
-
-                        <p>
-                            Leveza e delicadeza para o seu dia.
-                        </p>
-
-                        <span class="preco">R$ 129,90</span>
-
-                        <button
-                            class="botao comprar"
-                            data-produto="Floral Dream">
-                            Tenho interesse
-                        </button>
-
-                    </div>
-
-                </article>
-
+            <div class="campo">
+              <label for="email">Seu e-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" required>
             </div>
-
-            <p id="semResultados" class="sem-resultados" hidden>
-                Nenhum perfume encontrado.
-            </p>
-
-        </section>
-
-        <!-- SOBRE A EMPRESA -->
-        <section class="sobre secao" id="sobre">
-
-            <div>
-
-                <p class="destaque">SOBRE A GUI ESSENCE</p>
-
-                <h2>Mais que um perfume, uma identidade.</h2>
-
-                <p>
-                    A GUI LUXURY nasceu para quem valoriza o estilo,
-                    a confiança e o poder de uma boa fragrância.
-                    Encontre aromas para acompanhar cada momento.
-                </p>
-
+            <div class="campo">
+              <label for="telefone">WhatsApp</label>
+              <input id="telefone" name="telefone" type="tel" inputmode="tel" pattern="[0-9() +.-]{8,20}" autocomplete="tel" placeholder="(83) 99999-9999" required>
             </div>
+            <div class="campo">
+              <label for="familia">Família olfativa</label>
+              <select id="familia" name="familia" required>
+                <option value="">Selecione uma opção</option>
+                <option>Floral</option><option>Amadeirada</option><option>Oriental</option><option>Cítrica</option><option>Fresca</option><option>Ainda não sei</option>
+              </select>
+            </div>
+            <div class="campo campo-largo">
+              <span class="rotulo-campo">Como prefere receber o retorno?</span>
+              <div class="opcoes-radio">
+                <label><input type="radio" name="preferencia" value="WhatsApp" required> WhatsApp</label>
+                <label><input type="radio" name="preferencia" value="E-mail"> E-mail</label>
+              </div>
+            </div>
+            <div class="campo campo-largo">
+              <label for="mensagem">Mais algum detalhe? <span>(opcional)</span></label>
+              <textarea id="mensagem" name="mensagem" rows="3" maxlength="300" placeholder="Ocasião, notas que gosta ou perfume que costuma usar..."></textarea>
+            </div>
+            <label class="consentimento campo-largo"><input type="checkbox" name="consentimento" required> Concordo em ser contatado para receber informações sobre meu interesse.</label>
+            <button class="botao botao-dourado campo-largo" type="submit">Enviar meu interesse <span aria-hidden="true">→</span></button>
+            <p class="feedback campo-largo" id="feedbackFormulario" role="status" aria-live="polite"></p>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </main>
 
-        </section>
-
-        <!-- CONTATO -->
-        <section class="contato secao" id="contato">
-
-            <p class="destaque">FALE CONOSCO</p>
-
-            <h2>Encontre sua próxima fragrância.</h2>
-
-            <p>
-                Entre em contato para consultar produtos e preços.
-            </p>
-
-            <a
-                href="https://wa.me/"
-                class="botao"
-                id="contatoWhatsApp">
-                Fale pelo WhatsApp
-            </a>
-
-            <p class="aviso">
-                Configure o número de WhatsApp no arquivo JavaScript.
-            </p>
-
-        </section>
-
-    </main>
-
-    <!-- RODAPÉ -->
-    <footer class="rodape">
-
-        <a href="#inicio" class="logo">
-            GUI LUXURY
-            <span>PERFUMARIA</span>
-        </a>
-
-        <p>
-            © <span id="ano"></span> LUXURY.
-            Todos os direitos reservados.
-        </p>
-
-    </footer>
-
+  <footer class="rodape">
+    <a class="marca marca-rodape" href="#topo" aria-label="GUI Luxury, voltar ao início">
+      <span class="marca-simbolo" aria-hidden="true">G</span>
+      <span class="marca-texto">GUI <strong>LUXURY</strong><small>PERFUMARIA</small></span>
+    </a>
+    <p>Elegância em cada nota. Presença em cada memória.</p>
+    <div class="rodape-final"><span>© <span id="ano"></span> GUI Luxury. Projeto acadêmico.</span><a href="#topo">Voltar ao início ↑</a></div>
+  </footer>
 </body>
 </html>
