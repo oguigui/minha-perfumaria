@@ -1,0 +1,7 @@
+/* Reset básico para manter o mesmo comportamento entre navegadores. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; padding: 0; }
+h1, h2, h3, h4, p, figure { margin-top: 0; }
+button, input, select, textarea { font: inherit; }
+img, video, canvas, svg { display: block; max-width: 100%; }
