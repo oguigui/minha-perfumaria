@@ -92,10 +92,9 @@ Nomes sugeridos para os arquivos:
 ## Autor
 
 - **Nome:** Guilherme Henrique
-- **RGM:** preencher com o número informado no registro acadêmico.
+- **RGM:** 50129031.
 - **Disciplina:** Desenvolvimento Front-End Para Web.
-- **Curso:** o nome completo do curso superior ainda precisa ser confirmado no portal acadêmico.
-- **RGM:** não consta nas informações disponíveis para esta documentação; preencher com o número do registro acadêmico.
+- **Curso:** Análise e Desenvolvimento de Sistemas.
 
 ## Privacidade e dados
 
