@@ -1,60 +1,118 @@
 # GUI Luxury — Perfumaria
 
-Projeto acadêmico de desenvolvimento front-end: um protótipo de site para apresentar uma seleção fictícia de fragrâncias com identidade visual própria.
+Projeto Integrador acadêmico de desenvolvimento front-end. A GUI Luxury é um protótipo de perfumaria que apresenta fragrâncias fictícias e permite explorar o catálogo por nome, categoria e preço. O público pretendido são pessoas interessadas em conhecer diferentes estilos de perfume e consultar informações antes de entrar em contato.
 
-**Site:** https://oguigui.github.io/minha-perfumaria/  
-**Repositório:** https://github.com/oguigui/minha-perfumaria  
-**Relatório completo:** documento PDF complementar preparado para a entrega acadêmica.
+**Site publicado:** https://oguigui.github.io/minha-perfumaria/  
+**Repositório:** https://github.com/oguigui/minha-perfumaria
 
-## Objetivo e público
-
-A GUI Luxury demonstra como uma perfumaria pode apresentar seu catálogo e ajudar visitantes a explorar fragrâncias por nome, categoria e faixa de preço. O público pretendido são pessoas interessadas em conhecer perfumes e consultar opções antes de entrar em contato.
-
-> **Importante:** este é um protótipo acadêmico. Os cinco perfumes, preços e quantidades em estoque são fictícios e não representam ofertas ou disponibilidade comercial real.
+> **Aviso:** os cinco perfumes, preços e quantidades em estoque são dados demonstrativos. O projeto não representa uma loja com estoque ou vendas reais.
 
 ## Funcionalidades
 
-- Catálogo demonstrativo com cinco fragrâncias.
+- Catálogo com cinco fragrâncias e informações de nome, preço, categoria, estoque e descrição.
 - Busca por nome e filtros por categoria e preço máximo.
-- Cards com descrição, preço ilustrativo e disponibilidade fictícia.
-- Resumo do catálogo, tabela e gráfico em Canvas.
-- Exercício de lógica JavaScript para consultar produtos por preço.
-- Seções institucionais, vídeo de ambientação e assinatura sonora.
-- Formulário demonstrativo que prepara uma mensagem e abre o WhatsApp.
+- Atualização da grade, da tabela, dos indicadores e do gráfico conforme os filtros.
+- Botões de interesse com delegação de eventos e encaminhamento para o WhatsApp.
+- Exercício interativo de lógica com classificação por faixa de preço e resumo.
+- Gráfico Canvas e marca vetorial em SVG.
+- Menu responsivo com estado acessível e formulário com validação nativa.
+- Vídeo de ambientação e assinatura sonora com fontes MP3 e OGG.
 
-## Como visualizar
+## Tecnologias
 
-1. Clone ou baixe este repositório.
-2. Abra a pasta no VS Code.
-3. Abra `index.html` no navegador ou use a extensão Live Server.
-4. O site também pode ser acessado pelo link publicado acima.
+- HTML5 semântico.
+- CSS3 (variáveis, Flexbox, Grid, pseudo-classes e media queries).
+- JavaScript puro (arrays, funções, estruturas de controle, DOM e eventos).
+- Canvas 2D e SVG.
+- Git e GitHub Pages.
 
-## Tecnologias e estrutura
+Não são usados Bootstrap, jQuery, React ou outros frameworks.
 
-- HTML5, CSS3 e JavaScript puro, sem framework.
-- `index.html`: estrutura e conteúdo da página.
-- `css/reset.css` e `css/style.css`: estilos e adaptação para telas menores.
-- `js/main.js`: catálogo fictício, filtros, formulário, tabela e gráfico.
-- `js/logica.js`: exercício de lógica com consulta de preços.
-- `assets/images/`: ilustração SVG local.
-- `assets/audio/`: arquivo de áudio local.
+## Estrutura do projeto
+
+```text
+minha-perfumaria/
+├── index.html
+├── css/
+│   ├── reset.css
+│   └── style.css
+├── js/
+│   ├── main.js
+│   └── logica.js
+└── assets/
+    ├── images/
+    │   └── perfume-ilustracao.svg
+    └── audio/
+        └── assinatura-gui-luxury.mp3
+```
+
+O vídeo de ambientação é carregado do Pexels; as fotografias dos produtos e a imagem de fundo são carregadas da Unsplash.
+
+## Como executar
+
+1. Clone o repositório.
+2. Abra a pasta no Visual Studio Code.
+3. Abra `index.html` diretamente no navegador ou use a extensão Live Server.
+4. Para conferir a versão publicada, acesse o link do GitHub Pages no início deste documento.
+
+Todos os caminhos dos arquivos locais são relativos à raiz do projeto.
+
+## Mapa dos requisitos da entrega
+
+| Requisito | Arquivo / seção de implementação |
+|---|---|
+| Estrutura HTML5, idioma, metadados e título | `index.html`, início do documento |
+| Título principal, texto de apresentação e semântica | `index.html`, `header`, `main`, seções e `footer` |
+| Lista de conteúdo e tabela de produtos | `index.html`, seções Nossa essência e Análise; dados preenchidos por `preencherTabela()` em `js/main.js` |
+| Formulário, labels, fieldset, legend e validação | `index.html`, seção Contato; envio tratado em `js/main.js` |
+| SVG e Canvas com texto alternativo/fallback | `index.html`, marca e seção Análise; `desenharGrafico()` em `js/main.js` |
+| Vídeo e áudio com estratégia de carregamento | `index.html`, seções Vídeo e Assinatura sonora |
+| Reset global e box model | `css/reset.css` |
+| Variáveis, tipografia, seletores, estados de link e foco | `css/style.css`, início do arquivo e regras de navegação |
+| Navbar Flexbox, dropdown, sticky e menu móvel | `css/style.css` e `index.html`; controle em `js/main.js` |
+| Grade responsiva Grid e pseudo-classe estrutural | `css/style.css`, seletor `.grade-produtos` e `.produto:nth-child(2)` |
+| Lógica, classificação e resumo | `js/logica.js`, funções `classificarFaixaPreco()` e `resumirProdutosLogica()` |
+| Arrays, DOM e classes de resultado | `js/main.js`, `criarCard()`, `renderizarProdutos()` e `preencherTabela()`; `js/logica.js`, `mostrarProdutosLogica()` |
+| Busca, filtros e resumo dinâmico | `js/main.js`, `filtrarProdutos()` e `mostrarAnalise()` |
+| Delegação de eventos para cards dinâmicos | `js/main.js`, listener de clique em `gradeProdutos` |
+| Botão acessível com `aria-expanded` | `index.html`, botão `#menuMobile`; controle em `js/main.js` |
+| Scripts sem dependências e sem declarações globais duplicadas | `index.html`, scripts no final do `body`; `js/main.js` e `js/logica.js` |
+| Responsividade e redução de movimento | `css/style.css`, media queries e `prefers-reduced-motion` |
+
+## Capturas de tela
+
+O documento da entrega exige uma captura real da página em desktop e outra em celular, salvas em `assets/images/`. Essas imagens ainda precisam ser capturadas no navegador após a revisão visual final e adicionadas ao repositório. Não foram usadas imagens ilustrativas no lugar de capturas reais.
+
+Nomes sugeridos para os arquivos:
+- `assets/images/print-desktop.png`
+- `assets/images/print-mobile.png`
+
+## Autor
+
+- **Nome:** Guilherme Henrique
+- **RGM:** preencher com o número informado no registro acadêmico.
+- **Curso:** confirmar o nome oficial do curso antes da entrega.
 
 ## Privacidade e dados
 
-O projeto não possui servidor nem banco de dados próprio e não armazena os dados do formulário. Entretanto, o formulário solicita nome, e-mail, telefone, preferência de contato, família olfativa e mensagem opcional. Ao enviar, esses dados são inseridos em uma mensagem pré-preenchida e encaminhados ao WhatsApp quando a pessoa prossegue. Por isso, não use dados reais de terceiros em testes. O formulário precisa de um aviso de privacidade mais completo antes de qualquer uso real.
+O projeto não possui servidor nem banco de dados próprio. O formulário solicita nome, e-mail, telefone, família olfativa, preferência de contato e mensagem opcional. Ao enviar, os campos são organizados em uma mensagem pré-preenchida e o navegador abre o WhatsApp. A pessoa ainda precisa prosseguir no WhatsApp para enviar a mensagem. Não use dados pessoais reais de terceiros em testes. Um aviso de privacidade mais completo deve ser apresentado antes de qualquer uso comercial.
 
-## Créditos e materiais externos
+## Créditos e licenças
 
-- **Fotografias dos produtos:** imagens carregadas da [Unsplash](https://unsplash.com/license). A licença permite usos gratuitos, inclusive comerciais, observadas suas restrições. Os créditos individuais dos fotógrafos não foram identificados no código.
-- **Vídeo de ambientação:** [MART PRODUCTION — vídeo no Pexels](https://www.pexels.com/video/a-bottle-of-perfume-next-to-a-white-rose-8447664/). O site inclui crédito e link para a página do vídeo. Consulte a [Licença Pexels](https://www.pexels.com/license/).
-- **Ilustração SVG e áudio:** arquivos locais do projeto. A origem/licença do áudio e a autoria integral da ilustração não estão documentadas de forma suficiente; devem ser confirmadas antes de uso fora do contexto acadêmico.
-- **Fontes e gráfico:** fontes comuns do sistema e Canvas nativo, sem biblioteca externa identificada.
-- **Contato:** link `wa.me` para abrir o WhatsApp; não há API própria de catálogo ou pagamento.
+- **Fotografias:** imagens remotas da [Unsplash](https://unsplash.com/license). Os créditos individuais dos fotógrafos não estão identificados no código.
+- **Vídeo:** [MART PRODUCTION — Pexels](https://www.pexels.com/video/a-bottle-of-perfume-next-to-a-white-rose-8447664/). O crédito e o link para a página do vídeo aparecem no site. Consulte a [Licença Pexels](https://www.pexels.com/license/).
+- **SVG e áudio:** arquivos locais do projeto. A autoria/licença integral desses arquivos precisa ser confirmada antes de reutilização fora do contexto acadêmico.
+- **Gráfico:** Canvas 2D nativo, sem biblioteca externa.
+- **Contato:** link para WhatsApp via `wa.me`; não há API própria de catálogo, pagamento ou armazenamento.
 
-## Acessibilidade e responsabilidade
+## Acessibilidade, responsabilidade e testes
 
-O código inclui idioma da página, link para pular ao conteúdo, rótulos de formulário, textos alternativos, foco visível, atributos ARIA, tabela com cabeçalhos e suporte a redução de movimento. Esses recursos foram inspecionados no código, mas ainda é necessário realizar testes completos com teclado, leitor de tela e verificação de contraste.
+O código inclui idioma da página, link para pular ao conteúdo, labels associados, textos alternativos, foco visível, atributos ARIA, navegação por teclado, tabela com cabeçalhos e respeito à preferência por redução de movimento. Esses itens foram conferidos no código; isso não substitui testes manuais com teclado, leitor de tela e verificação de contraste.
 
-O projeto usa recursos externos e mídia remota; o vídeo pode consumir dados. Uma melhoria futura é iniciar o vídeo apenas após ação do visitante, reduzir os campos do formulário e apresentar um aviso de privacidade claro.
+Antes da entrega, faça a conferência no DevTools:
+1. Em Network, confirme que os arquivos locais e recursos externos carregam sem erros 404.
+2. No Console, abra a página e use busca, filtros, menu, formulário, consulta por preço e botões dos cards.
+3. No modo responsivo, confira a apresentação em desktop e celular e salve as duas capturas reais na pasta indicada.
+4. Em Elements > Layout, confira as colunas da grade CSS Grid.
 
-A análise completa dos nove tópicos, limitações, legislação e referências está no relatório PDF complementar da entrega.
+Os testes de navegador, as capturas, o RGM e a confirmação do nome oficial do curso precisam ser concluídos no ambiente do aluno antes do envio final.
