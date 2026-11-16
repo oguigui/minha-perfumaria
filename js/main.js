@@ -116,9 +116,7 @@ function criarCard(produto) {
   botao.textContent = "Tenho interesse";
   botao.disabled = produto.estoque === 0;
   botao.setAttribute("aria-label", "Consultar " + produto.nome + " pelo WhatsApp");
-  botao.addEventListener("click", function () {
-    abrirWhatsApp("Olá! Tenho interesse no perfume " + produto.nome + ". Pode me passar mais informações?");
-  });
+  botao.dataset.produto = produto.nome;
 
   if (produto.estoque === 0) {
     botao.textContent = "Produto esgotado";
@@ -144,6 +142,8 @@ function renderizarProdutos(lista) {
   semResultados.hidden = lista.length > 0;
 }
 
+let produtosVisiveis = produtos;
+
 function filtrarProdutos() {
   const termo = campoBusca.value.trim().toLocaleLowerCase("pt-BR");
   const categoriaSelecionada = filtroCategoria.value;
@@ -158,13 +158,16 @@ function filtrarProdutos() {
     return correspondeNome && correspondeCategoria && correspondePreco;
   });
 
+  produtosVisiveis = resultado;
   renderizarProdutos(resultado);
+  preencherTabela(resultado);
+  mostrarAnalise(resultado);
 }
 
 // Preenche a tabela com os mesmos dados usados nos cards.
-function preencherTabela() {
+function preencherTabela(lista = produtos) {
   const corpo = document.getElementById("tabelaProdutos");
-  const linhas = produtos.map(function (produto) {
+  const linhas = lista.map(function (produto) {
     const linha = document.createElement("tr");
     const valores = [
       produto.nome,
@@ -199,9 +202,11 @@ function analisarCatalogo(lista) {
     return acumulado + preco;
   }, 0);
 
-  const maiorPreco = lista.reduce(function (maior, produto) {
-    return produto.preco > maior.preco ? produto : maior;
-  }, lista[0]);
+  const maiorPreco = lista.length
+    ? lista.reduce(function (maior, produto) {
+        return produto.preco > maior.preco ? produto : maior;
+      }, lista[0])
+    : null;
 
   // O laço for...of soma as unidades disponíveis sem alterar os dados originais.
   let unidadesDisponiveis = 0;
@@ -232,11 +237,13 @@ function analisarCatalogo(lista) {
   };
 }
 
-function mostrarAnalise() {
-  const resumo = analisarCatalogo(produtos);
+function mostrarAnalise(lista = produtos) {
+  const resumo = analisarCatalogo(lista);
   document.getElementById("totalProdutos").textContent = resumo.quantidade;
   document.getElementById("valorCatalogo").textContent = formatarPreco(resumo.valorTotal);
-  document.getElementById("produtoDestaque").textContent = formatarPreco(resumo.maiorPreco.preco);
+  document.getElementById("produtoDestaque").textContent = resumo.maiorPreco
+    ? formatarPreco(resumo.maiorPreco.preco)
+    : "—";
   desenharGrafico(resumo.totaisPorCategoria);
 }
 
@@ -255,7 +262,7 @@ function desenharGrafico(dados) {
 
   canvas.width = Math.round(larguraCss * escala);
   canvas.height = Math.round(alturaCss * escala);
-  contexto.scale(escala, escala);
+  contexto.setTransform(escala, 0, 0, escala, 0, 0);
   contexto.clearRect(0, 0, larguraCss, alturaCss);
 
   const categorias = Object.keys(dados);
@@ -294,6 +301,23 @@ function abrirWhatsApp(mensagem) {
   const endereco = "https://wa.me/" + telefoneWhatsApp + "?text=" + encodeURIComponent(mensagem);
   window.open(endereco, "_blank", "noopener,noreferrer");
 }
+
+// Delegação de eventos: um único listener atende os botões atuais e os recriados
+// pela busca/filtros, sem registrar um evento novo em cada card.
+gradeProdutos.addEventListener("click", function (evento) {
+  const botao = evento.target.closest("button[data-produto]");
+  if (!botao || !gradeProdutos.contains(botao) || botao.disabled) {
+    return;
+  }
+
+  const produtoSelecionado = produtos.find(function (produto) {
+    return produto.nome === botao.dataset.produto;
+  });
+
+  if (produtoSelecionado) {
+    abrirWhatsApp("Olá! Tenho interesse no perfume " + produtoSelecionado.nome + ". Pode me passar mais informações?");
+  }
+});
 
 // Menu mobile: mantém aria-expanded sincronizado com o estado visual.
 const botaoMenu = document.getElementById("menuMobile");
@@ -378,7 +402,9 @@ mostrarAnalise();
 let temporizadorRedesenho;
 window.addEventListener("resize", function () {
   window.clearTimeout(temporizadorRedesenho);
-  temporizadorRedesenho = window.setTimeout(mostrarAnalise, 120);
+  temporizadorRedesenho = window.setTimeout(function () {
+    mostrarAnalise(produtosVisiveis);
+  }, 120);
 });
 
 // Destaca no menu a seção que está mais presente na área visível.
