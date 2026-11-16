@@ -2,8 +2,8 @@
 
 Projeto Integrador acadêmico de desenvolvimento front-end. A GUI Luxury é um protótipo de perfumaria que apresenta fragrâncias fictícias e permite explorar o catálogo por nome, categoria e preço. O público pretendido são pessoas interessadas em conhecer diferentes estilos de perfume e consultar informações antes de entrar em contato.
 
-**Site publicado:** https://oguigui.github.io/minha-perfumaria/  
-**Repositório:** https://github.com/oguigui/minha-perfumaria
+**Site publicado:** https://oguigui.github.io/projeto-integrador-frontend-guilherme-henrique/  
+**Repositório:** https://github.com/oguigui/projeto-integrador-frontend-guilherme-henrique
 
 > **Aviso:** os cinco perfumes, preços e quantidades em estoque são dados demonstrativos. O projeto não representa uma loja com estoque ou vendas reais.
 
