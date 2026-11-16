@@ -271,3 +271,51 @@ table tbody tr:nth-child(even) { background: rgba(255,255,255,.025); }
 .video-moldura figcaption { margin-top: 10px; color: var(--texto-suave); font-size: .65rem; text-align: right; }
 .video-moldura figcaption a { color: var(--dourado-claro); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 720px) { .video-moldura video { aspect-ratio: 4 / 3; } }
+
+
+/* Ajustes finais de consistência visual e enquadramento de mídia. */
+.video-moldura video {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+@media (max-width: 720px) {
+  .video-moldura video {
+    aspect-ratio: 16 / 9;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .video-moldura figcaption {
+    text-align: left;
+    line-height: 1.6;
+  }
+
+  .hero-selo {
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .cabecalho {
+    padding-inline: 16px;
+  }
+
+  .marca-simbolo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .marca-texto {
+    font-size: 0.8125rem;
+    letter-spacing: 2px;
+  }
+
+  .marca-texto small {
+    letter-spacing: 3px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 11vw, 2.6875rem);
+  }
+}
