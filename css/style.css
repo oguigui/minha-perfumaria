@@ -259,3 +259,15 @@ table tbody tr:nth-child(even) { background: rgba(255,255,255,.025); }
 .resultado-logica li.faixa-essencial { border-left: 2px solid #78947b; padding-left: 10px; }
 .resultado-logica li.faixa-classico { border-left: 2px solid var(--dourado); padding-left: 10px; }
 .resultado-logica li.faixa-exclusivo { border-left: 2px solid #a88dbb; padding-left: 10px; }
+
+
+/* Vídeo de apresentação da GUI Luxury. */
+.video-perfumaria { background: #1c1b16; border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
+.video-cabecalho { max-width: 760px; margin: 0 auto 30px; text-align: center; }
+.video-cabecalho h2 { margin: 0; font: 400 clamp(2.125rem, 4.4vw, 3.375rem)/1.08 var(--serifada); }
+.video-cabecalho > p:last-child { color: var(--texto-suave); font-size: .75rem; line-height: 1.8; }
+.video-moldura { max-width: 1040px; margin: 0 auto; }
+.video-moldura video { display: block; width: 100%; max-height: 560px; aspect-ratio: 16 / 9; object-fit: cover; background: #111; border: 1px solid var(--borda); }
+.video-moldura figcaption { margin-top: 10px; color: var(--texto-suave); font-size: .65rem; text-align: right; }
+.video-moldura figcaption a { color: var(--dourado-claro); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 720px) { .video-moldura video { aspect-ratio: 4 / 3; } }
