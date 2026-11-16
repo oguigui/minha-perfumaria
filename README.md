@@ -4,7 +4,7 @@ Projeto acadêmico de desenvolvimento front-end: um protótipo de site para apre
 
 **Site:** https://oguigui.github.io/minha-perfumaria/  
 **Repositório:** https://github.com/oguigui/minha-perfumaria  
-**Relatório completo:** [Relatório de responsabilidade ética e profissional (PDF)](docs/Relatorio_GUI_Luxury.pdf)
+**Relatório completo:** documento PDF complementar preparado para a entrega acadêmica.
 
 ## Objetivo e público
 
@@ -57,4 +57,4 @@ O código inclui idioma da página, link para pular ao conteúdo, rótulos de fo
 
 O projeto usa recursos externos e mídia remota; o vídeo pode consumir dados. Uma melhoria futura é iniciar o vídeo apenas após ação do visitante, reduzir os campos do formulário e apresentar um aviso de privacidade claro.
 
-Consulte o [relatório completo em PDF](docs/Relatorio_GUI_Luxury.pdf) para a análise dos nove tópicos, limitações, legislação e referências.
+A análise completa dos nove tópicos, limitações, legislação e referências está no relatório PDF complementar da entrega.
