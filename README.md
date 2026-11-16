@@ -31,7 +31,7 @@ Não são usados Bootstrap, jQuery, React ou outros frameworks.
 ## Estrutura do projeto
 
 ```text
-minha-perfumaria/
+projeto-integrador-frontend-guilherme-henrique/
 ├── index.html
 ├── css/
 │   ├── reset.css
