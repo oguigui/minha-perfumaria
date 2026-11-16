@@ -55,7 +55,7 @@ img { display: block; max-width: 100%; }
 .hero-conteudo { max-width: 610px; }
 .sobretitulo { margin: 0 0 18px; color: var(--dourado); font-size: 0.625rem; font-weight: 700; letter-spacing: 3px; }
 .sobretitulo span { display: inline-block; width: 24px; height: 1px; margin: 0 10px 3px 0; background: var(--dourado); }
-.hero h1, .secao h2 { margin: 0; font: 400 clamp(2.625rem, 6vw, 4.75rem)/1.08 var(--serifada); letter-spacing: -1.8px; }
+.hero h1, .secao h2 { margin: 0; font: 400 clamp(2.625rem, 4rem, 4.75rem)/1.08 var(--serifada); letter-spacing: -1.8px; }
 h1 em, h2 em { color: var(--dourado-claro); font-weight: 400; }
 .hero-descricao { max-width: 450px; margin: 24px 0 32px; color: #d0cbc0; font-size: 0.875rem; line-height: 1.9; }
 .botao { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 24px; padding: 13px 20px; border: 1px solid transparent; cursor: pointer; font-size: 0.6875rem; font-weight: 700; letter-spacing: .6px; transition: background .2s ease, color .2s ease, border-color .2s ease; }
@@ -74,7 +74,7 @@ h1 em, h2 em { color: var(--dourado-claro); font-weight: 400; }
 
 .secao { padding: 105px clamp(1.5rem, 9vw, 8.625rem); }
 .secao-cabecalho, .analise-cabecalho { display: flex; align-items: end; justify-content: space-between; gap: 35px; margin-bottom: 38px; }
-.secao h2 { font-size: clamp(2.125rem, 4.4vw, 3.375rem); }
+.secao h2 { font-size: clamp(2.125rem, 3rem, 3.375rem); }
 .texto-apoio { max-width: 390px; margin: 0 0 5px; color: var(--texto-suave); font-size: 0.75rem; line-height: 1.9; }
 .filtros { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 28px; }
 .campo-pesquisa { width: min(100%, 390px); display: flex; align-items: center; gap: 10px; padding: 0 14px; border: 1px solid var(--borda); background: #1c1b16; color: var(--dourado); }
@@ -228,7 +228,7 @@ input[type="radio"], input[type="checkbox"] { accent-color: var(--dourado); }
 
 /* Assinatura sonora: controles nativos mantêm acessibilidade por teclado. */
 .audio-marca { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .8fr); align-items: center; gap: 40px; background: #211f19; border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
-.audio-texto h2 { margin: 0; font: 400 clamp(2.125rem, 4.4vw, 3.375rem)/1.08 var(--serifada); }
+.audio-texto h2 { margin: 0; font: 400 clamp(2.125rem, 3rem, 3.375rem)/1.08 var(--serifada); }
 .audio-texto > p:last-child { max-width: 460px; color: var(--texto-suave); font-size: 0.75rem; line-height: 1.9; }
 .audio-marca audio { width: 100%; accent-color: var(--dourado); }
 @media (max-width: 720px) { .audio-marca { grid-template-columns: 1fr; gap: 22px; } }
