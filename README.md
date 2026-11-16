@@ -71,12 +71,14 @@ Todos os caminhos dos arquivos locais são relativos à raiz do projeto.
 | Variáveis, tipografia, seletores, estados de link e foco | `css/style.css`, início do arquivo e regras de navegação |
 | Navbar Flexbox, dropdown, sticky e menu móvel | `css/style.css` e `index.html`; controle em `js/main.js` |
 | Grade responsiva Grid e pseudo-classe estrutural | `css/style.css`, seletor `.grade-produtos` e `.produto:nth-child(2)` |
-| Lógica, classificação e resumo | `js/logica.js`, funções `classificarFaixaPreco()` e `resumirProdutosLogica()` |
+| Lógica (dados → classificar → resumir), `if/else if/else`, `switch`, `for`, `for...of`, acumulador, `while` e `do...while` | `js/logica.js`, comentário de planejamento no topo, `classificarFaixaPreco()`, `nomeCategoriaLogica()`, `resumirProdutosLogica()` e menu interativo |
 | Arrays, DOM e classes de resultado | `js/main.js`, `criarCard()`, `renderizarProdutos()` e `preencherTabela()`; `js/logica.js`, `mostrarProdutosLogica()` |
 | Busca, filtros e resumo dinâmico | `js/main.js`, `filtrarProdutos()` e `mostrarAnalise()` |
 | Delegação de eventos para cards dinâmicos | `js/main.js`, listener de clique em `gradeProdutos` |
 | Botão acessível com `aria-expanded` | `index.html`, botão `#menuMobile`; controle em `js/main.js` |
+| Funções, escopo local, `const`/`let`, `Number()` e `return` | `js/main.js` e `js/logica.js`, funções de processamento e classificação |
 | Scripts sem dependências e sem declarações globais duplicadas | `index.html`, scripts no final do `body`; `js/main.js` e `js/logica.js` |
+| Tipografia com unidades relativas `rem` | `css/style.css`, comentário inicial e declarações tipográficas |
 | Responsividade e redução de movimento | `css/style.css`, media queries e `prefers-reduced-motion` |
 
 ## Capturas de tela
