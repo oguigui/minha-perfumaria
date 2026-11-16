@@ -83,11 +83,15 @@ Todos os caminhos dos arquivos locais são relativos à raiz do projeto.
 
 ## Capturas de tela
 
-O documento da entrega exige uma captura real da página em desktop e outra em celular, salvas em `assets/images/`. Essas imagens ainda não foram capturadas nem adicionadas ao repositório. Não foram usadas imagens ilustrativas no lugar de capturas reais.
+### Desktop
 
-Nomes sugeridos para os arquivos:
-- `assets/images/print-desktop.png`
-- `assets/images/print-mobile.png`
+A captura de tela enviada para o repositório está salva em `assets/images/image.png`.
+
+![Captura de tela da GUI Luxury em desktop](assets/images/image.png)
+
+### Celular
+
+A captura em formato mobile ainda precisa ser adicionada em `assets/images/` para completar este requisito da entrega.
 
 ## Autor
 
