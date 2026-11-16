@@ -41,6 +41,7 @@ projeto-integrador-frontend-guilherme-henrique/
 │   └── logica.js
 └── assets/
     ├── images/
+    │   ├── image.png
     │   └── perfume-ilustracao.svg
     └── audio/
         └── assinatura-gui-luxury.mp3
