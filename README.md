@@ -46,7 +46,7 @@ minha-perfumaria/
         └── assinatura-gui-luxury.mp3
 ```
 
-O vídeo de ambientação é carregado do Pexels; as fotografias dos produtos e a imagem de fundo são carregadas da Unsplash.
+O vídeo de ambientação é carregado do Pexels; as fotografias dos produtos e a imagem de fundo são carregadas da Unsplash. O áudio oferece MP3 por arquivo local e OGG incorporado diretamente no HTML como data URI (não existe um segundo arquivo OGG na pasta).
 
 ## Como executar
 
@@ -81,7 +81,7 @@ Todos os caminhos dos arquivos locais são relativos à raiz do projeto.
 
 ## Capturas de tela
 
-O documento da entrega exige uma captura real da página em desktop e outra em celular, salvas em `assets/images/`. Essas imagens ainda precisam ser capturadas no navegador após a revisão visual final e adicionadas ao repositório. Não foram usadas imagens ilustrativas no lugar de capturas reais.
+O documento da entrega exige uma captura real da página em desktop e outra em celular, salvas em `assets/images/`. Essas imagens ainda não foram capturadas nem adicionadas ao repositório. Não foram usadas imagens ilustrativas no lugar de capturas reais.
 
 Nomes sugeridos para os arquivos:
 - `assets/images/print-desktop.png`
@@ -91,7 +91,9 @@ Nomes sugeridos para os arquivos:
 
 - **Nome:** Guilherme Henrique
 - **RGM:** preencher com o número informado no registro acadêmico.
-- **Curso:** confirmar o nome oficial do curso antes da entrega.
+- **Disciplina:** Desenvolvimento Front-End Para Web.
+- **Curso:** o nome completo do curso superior ainda precisa ser confirmado no portal acadêmico.
+- **RGM:** não consta nas informações disponíveis para esta documentação; preencher com o número do registro acadêmico.
 
 ## Privacidade e dados
 
