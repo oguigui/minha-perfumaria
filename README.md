@@ -118,4 +118,4 @@ Antes da entrega, faça a conferência no DevTools:
 3. No modo responsivo, confira a apresentação em desktop e celular e salve as duas capturas reais na pasta indicada.
 4. Em Elements > Layout, confira as colunas da grade CSS Grid.
 
-Os testes de navegador, as capturas, o RGM e a confirmação do nome oficial do curso precisam ser concluídos no ambiente do aluno antes do envio final.
+Os testes finais em navegador e as capturas reais em desktop e celular ainda precisam ser concluídos antes do envio final.
