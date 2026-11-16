@@ -9,8 +9,6 @@
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
-  <script src="js/logica.js" defer></script>
 </head>
 <body>
   <a class="atalho" href="#conteudo">Pular para o conteúdo</a>
@@ -48,7 +46,7 @@
       <div class="hero-fundo" aria-hidden="true"></div>
       <div class="hero-conteudo">
         <p class="sobretitulo"><span></span> PERFUMARIA • JOÃO PESSOA</p>
-        <h1 id="titulo-principal">Sua presença<br>tem <em>uma essência.</em></h1>
+        <h1 id="titulo-principal">GUI Luxury<br>tem <em>uma essência.</em></h1>
         <p class="hero-descricao">Fragrâncias escolhidas para acompanhar histórias, despertar sensações e deixar lembranças por onde você passar.</p>
         <a class="botao botao-dourado" href="#produtos">Descubra sua fragrância <span aria-hidden="true">→</span></a>
         <div class="hero-nota"><span>01 / 03</span><span class="linha-nota"></span><span>O luxo está nos detalhes</span></div>
@@ -71,7 +69,8 @@
         <p>Um olhar especial sobre o universo das fragrâncias.</p>
       </div>
       <figure class="video-moldura">
-        <video controls autoplay muted loop playsinline preload="metadata" aria-label="Vídeo de uma embalagem de perfume ao lado de uma rosa branca">
+        <!-- metadata carrega apenas informações iniciais; o vídeo só começa quando a pessoa aciona os controles. -->
+        <video controls muted loop playsinline preload="metadata" poster="assets/images/perfume-ilustracao.svg" aria-label="Vídeo de uma embalagem de perfume ao lado de uma rosa branca">
           <source src="https://videos.pexels.com/video-files/8447664/8447664-uhd_4096_2160_25fps.mp4" type="video/mp4">
           Seu navegador não conseguiu reproduzir este vídeo.
         </video>
@@ -250,5 +249,7 @@
     <p>Elegância em cada nota. Presença em cada memória.</p>
     <div class="rodape-final"><span>© <span id="ano"></span> GUI Luxury. Projeto acadêmico.</span><a href="#topo">Voltar ao início ↑</a></div>
   </footer>
+  <script src="js/main.js" defer></script>
+  <script src="js/logica.js" defer></script>
 </body>
 </html>
