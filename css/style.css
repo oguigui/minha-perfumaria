@@ -22,7 +22,8 @@ a:link { color: inherit; }
 a:visited { color: inherit; }
 a:hover { color: var(--dourado-claro); }
 a:active { color: var(--dourado); }
-button, input, select, textarea { font-size: inherit; }
+/* Unidades rem mantêm os controles na escala tipográfica definida pelo navegador. */
+button, input, select, textarea { font-size: 1rem; }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 img { display: block; max-width: 100%; }
 [hidden] { display: none !important; }

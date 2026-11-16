@@ -1,126 +1,125 @@
 # GUI Luxury — Perfumaria
 
-Projeto Integrador acadêmico de desenvolvimento front-end. A GUI Luxury é um protótipo de perfumaria que apresenta fragrâncias fictícias e permite explorar o catálogo por nome, categoria e preço. O público pretendido são pessoas interessadas em conhecer diferentes estilos de perfume e consultar informações antes de entrar em contato.
+A GUI Luxury é um projeto acadêmico de desenvolvimento front-end que apresenta um catálogo demonstrativo de perfumes. A página foi pensada para quem gosta de conhecer fragrâncias e comparar estilos, categorias e preços. A proposta é reunir essas informações em uma navegação simples, com identidade visual própria e contato direto pelo WhatsApp.
 
 **Site publicado:** https://oguigui.github.io/projeto-integrador-frontend-guilherme-henrique/  
 **Repositório:** https://github.com/oguigui/projeto-integrador-frontend-guilherme-henrique
 
-> **Aviso:** os cinco perfumes, preços e quantidades em estoque são dados demonstrativos. O projeto não representa uma loja com estoque ou vendas reais.
+> **Importante:** os produtos, preços e quantidades são dados fictícios para demonstrar as funcionalidades. O site não processa vendas nem consulta estoque real.
 
-## Funcionalidades
+## O que a página oferece
 
-- Catálogo com cinco fragrâncias e informações de nome, preço, categoria, estoque e descrição.
+- Catálogo com cinco fragrâncias e informações de preço, categoria, descrição e disponibilidade.
 - Busca por nome e filtros por categoria e preço máximo.
-- Atualização da grade, da tabela, dos indicadores e do gráfico conforme os filtros.
-- Botões de interesse com delegação de eventos e encaminhamento para o WhatsApp.
-- Exercício interativo de lógica com classificação por faixa de preço e resumo.
-- Gráfico Canvas e marca vetorial em SVG.
-- Menu responsivo com estado acessível e formulário com validação nativa.
-- Vídeo de ambientação e assinatura sonora com fontes MP3 e OGG.
+- Tabela, indicadores e gráfico atualizados conforme os filtros.
+- Botões de interesse que preparam uma mensagem para o WhatsApp.
+- Atividade de lógica para consultar perfumes dentro de um limite de preço.
+- Menu adaptado para telas menores, formulário com validação e elementos acessíveis.
+- Vídeo de ambientação e assinatura sonora com alternativas de áudio MP3 e OGG.
 
-## Tecnologias
+## Tecnologias utilizadas
 
 - HTML5 semântico.
-- CSS3 (variáveis, Flexbox, Grid, pseudo-classes e media queries).
-- JavaScript puro (arrays, funções, estruturas de controle, DOM e eventos).
-- Canvas 2D e SVG.
-- Git e GitHub Pages.
+- CSS3, com variáveis, Flexbox, Grid, pseudo-classes e media queries.
+- JavaScript puro, com funções, arrays, estruturas de controle, manipulação do DOM e eventos.
+- SVG e Canvas 2D.
+- Git, GitHub e GitHub Pages.
 
-Não são usados Bootstrap, jQuery, React ou outros frameworks.
+O projeto não utiliza Bootstrap, jQuery, React ou outros frameworks.
 
-## Estrutura do projeto
+## Organização dos arquivos
 
 ```text
 projeto-integrador-frontend-guilherme-henrique/
 ├── index.html
+├── image.png                 # imagem de comprovação mantida na raiz
+├── README.md
 ├── css/
 │   ├── reset.css
 │   └── style.css
 ├── js/
 │   ├── main.js
 │   └── logica.js
-└── assets/
-    ├── images/
-    │   ├── image.png
-    │   └── perfume-ilustracao.svg
-    └── audio/
-        └── assinatura-gui-luxury.mp3
+├── assets/
+│   ├── audio/
+│   │   └── assinatura-gui-luxury.mp3
+│   └── images/
+│       ├── image.png
+│       └── perfume-ilustracao.svg
+└── docs/
+    └── historico-do-projeto.md
 ```
 
-O vídeo de ambientação é carregado do Pexels; as fotografias dos produtos e a imagem de fundo são carregadas da Unsplash. O áudio oferece MP3 por arquivo local e OGG incorporado diretamente no HTML como data URI (não existe um segundo arquivo OGG na pasta).
+As imagens dos produtos e a imagem de fundo são carregadas de endereços da Unsplash. O vídeo de ambientação vem do Pexels. O áudio oferece um arquivo MP3 local e uma alternativa OGG incorporada no HTML como data URI.
 
 ## Como executar
 
-1. Clone o repositório.
+1. Clone ou baixe este repositório.
 2. Abra a pasta no Visual Studio Code.
-3. Abra `index.html` diretamente no navegador ou use a extensão Live Server.
-4. Para conferir a versão publicada, acesse o link do GitHub Pages no início deste documento.
+3. Abra o arquivo `index.html` no navegador. Também é possível usar a extensão Live Server.
+4. Para consultar a versão publicada, use o link do GitHub Pages no início deste documento.
 
-Todos os caminhos dos arquivos locais são relativos à raiz do projeto.
+Os arquivos locais são chamados por caminhos relativos à pasta do projeto.
 
 ## Mapa dos requisitos da entrega
 
-| Requisito | Arquivo / seção de implementação |
+| Requisito | Onde conferir |
 |---|---|
 | Estrutura HTML5, idioma, metadados e título | `index.html`, início do documento |
-| Título principal, texto de apresentação e semântica | `index.html`, `header`, `main`, seções e `footer` |
-| Lista de conteúdo e tabela de produtos | `index.html`, seções Nossa essência e Análise; dados preenchidos por `preencherTabela()` em `js/main.js` |
-| Formulário, labels, fieldset, legend e validação | `index.html`, seção Contato; envio tratado em `js/main.js` |
-| SVG e Canvas com texto alternativo/fallback | `index.html`, marca e seção Análise; `desenharGrafico()` em `js/main.js` |
-| Vídeo e áudio com estratégia de carregamento | `index.html`, seções Vídeo e Assinatura sonora |
-| Reset global e box model | `css/reset.css` |
-| Variáveis, tipografia, seletores, estados de link e foco | `css/style.css`, início do arquivo e regras de navegação |
-| Navbar Flexbox, dropdown, sticky e menu móvel | `css/style.css` e `index.html`; controle em `js/main.js` |
-| Grade responsiva Grid e pseudo-classe estrutural | `css/style.css`, seletor `.grade-produtos` e `.produto:nth-child(2)` |
-| Lógica (dados → classificar → resumir), `if/else if/else`, `switch`, `for`, `for...of`, acumulador, `while` e `do...while` | `js/logica.js`, comentário de planejamento no topo, `classificarFaixaPreco()`, `nomeCategoriaLogica()`, `resumirProdutosLogica()` e menu interativo |
-| Arrays, DOM e classes de resultado | `js/main.js`, `criarCard()`, `renderizarProdutos()` e `preencherTabela()`; `js/logica.js`, `mostrarProdutosLogica()` |
-| Busca, filtros e resumo dinâmico | `js/main.js`, `filtrarProdutos()` e `mostrarAnalise()` |
-| Delegação de eventos para cards dinâmicos | `js/main.js`, listener de clique em `gradeProdutos` |
-| Botão acessível com `aria-expanded` | `index.html`, botão `#menuMobile`; controle em `js/main.js` |
-| Funções, escopo local, `const`/`let`, `Number()` e `return` | `js/main.js` e `js/logica.js`, funções de processamento e classificação |
-| Scripts sem dependências e sem declarações globais duplicadas | `index.html`, scripts no final do `body`; `js/main.js` e `js/logica.js` |
-| Tipografia com unidades relativas `rem` | `css/style.css`, comentário inicial e declarações tipográficas |
-| Responsividade e redução de movimento | `css/style.css`, media queries e `prefers-reduced-motion` |
+| Título principal e estrutura semântica | `index.html`, `header`, `main`, seções e `footer` |
+| Lista e tabela relacionadas ao tema | `index.html`, seções Nossa essência e Análise |
+| Formulário, labels, fieldset, legend e validação | `index.html`, seção Contato; envio em `js/main.js` |
+| Vídeo, áudio e estratégia de carregamento | `index.html`, seções de vídeo e assinatura sonora |
+| SVG e Canvas com alternativa textual | `index.html`, marca e seção Análise; desenho em `js/main.js` |
+| Reset e box model | `css/reset.css` |
+| Variáveis, tipografia, estados de link e foco | `css/style.css`, início do arquivo |
+| Navbar Flexbox, dropdown, estado ativo e menu móvel | `index.html`, navegação; regras em `css/style.css`; eventos em `js/main.js` |
+| Grid, pseudo-classe estrutural e efeito de hover | `css/style.css`, `.grade-produtos` e `.produto:nth-child(2)` |
+| Lógica: dados, classificação e resumo | `js/logica.js`, comentário de planejamento e funções de classificação e resumo |
+| Funções, escopo, conversão com Number e retorno | `js/main.js` e `js/logica.js` |
+| map, filter, reduce e criação de elementos no DOM | `js/main.js`, renderização, filtros e tabela |
+| Delegação de eventos nos cards | `js/main.js`, listener de clique em `gradeProdutos` |
+| Busca, filtros e resumo atualizado | `js/main.js`, função `filtrarProdutos()` e atualização da análise |
+| Botão acessível do menu | `index.html`, botão `#menuMobile`; controle em `js/main.js` |
+| Scripts carregados com defer | `index.html`, final do `body` |
+| Responsividade | `css/style.css`, media queries |
 
-## Capturas de tela
+## Imagem de comprovação
 
-### Desktop
+A imagem abaixo foi mantida como registro visual do projeto e não é usada como fotografia de produto.
 
-A captura de tela enviada para o repositório está salva em `assets/images/image.png`.
+![Imagem de comprovação do projeto GUI Luxury](assets/images/image.png)
 
-![Captura de tela da GUI Luxury em desktop](assets/images/image.png)
-
-### Celular
-
-A captura em formato mobile ainda precisa ser adicionada em `assets/images/` para completar este requisito da entrega.
+**Captura em celular:** ainda precisa ser registrada em um navegador no modo responsivo e adicionada à pasta `assets/images/`. Não foi criada uma imagem simulada para substituir essa evidência.
 
 ## Autor
 
 - **Nome:** Guilherme Henrique
-- **RGM:** 50129031.
-- **Disciplina:** Desenvolvimento Front-End Para Web.
-- **Curso:** Análise e Desenvolvimento de Sistemas.
+- **RGM:** 50129031
+- **Curso:** Análise e Desenvolvimento de Sistemas
+- **Disciplina:** Desenvolvimento Front-End para Web
 
-## Privacidade e dados
+## Funcionamento e privacidade
 
-O projeto não possui servidor nem banco de dados próprio. O formulário solicita nome, e-mail, telefone, família olfativa, preferência de contato e mensagem opcional. Ao enviar, os campos são organizados em uma mensagem pré-preenchida e o navegador abre o WhatsApp. A pessoa ainda precisa prosseguir no WhatsApp para enviar a mensagem. Não use dados pessoais reais de terceiros em testes. Um aviso de privacidade mais completo deve ser apresentado antes de qualquer uso comercial.
+O projeto é estático e não possui servidor ou banco de dados próprio. O formulário organiza as informações preenchidas em uma mensagem e abre o WhatsApp para que a pessoa decida se deseja enviá-la. Nenhuma mensagem é enviada automaticamente pelo site.
 
-## Créditos e licenças
+Não utilize dados pessoais de terceiros durante os testes. Antes de qualquer uso comercial, será necessário apresentar informações de privacidade adequadas.
+
+## Créditos
 
 - **Fotografias:** imagens remotas da [Unsplash](https://unsplash.com/license). Os créditos individuais dos fotógrafos não estão identificados no código.
-- **Vídeo:** [MART PRODUCTION — Pexels](https://www.pexels.com/video/a-bottle-of-perfume-next-to-a-white-rose-8447664/). O crédito e o link para a página do vídeo aparecem no site. Consulte a [Licença Pexels](https://www.pexels.com/license/).
-- **SVG e áudio:** arquivos locais do projeto. A autoria/licença integral desses arquivos precisa ser confirmada antes de reutilização fora do contexto acadêmico.
+- **Vídeo:** MART PRODUCTION, disponível no [Pexels](https://www.pexels.com/video/a-bottle-of-perfume-next-to-a-white-rose-8447664/). Consulte a [licença Pexels](https://www.pexels.com/license/).
 - **Gráfico:** Canvas 2D nativo, sem biblioteca externa.
-- **Contato:** link para WhatsApp via `wa.me`; não há API própria de catálogo, pagamento ou armazenamento.
+- **Marca e ilustração:** SVG mantido nos arquivos do projeto.
 
-## Acessibilidade, responsabilidade e testes
+## Conferência antes da entrega
 
-O código inclui idioma da página, link para pular ao conteúdo, labels associados, textos alternativos, foco visível, atributos ARIA, navegação por teclado, tabela com cabeçalhos e respeito à preferência por redução de movimento. Esses itens foram conferidos no código; isso não substitui testes manuais com teclado, leitor de tela e verificação de contraste.
+Antes de enviar o link ao professor:
 
-Antes da entrega, faça a conferência no DevTools:
-1. Em Network, confirme que os arquivos locais e recursos externos carregam sem erros 404.
-2. No Console, abra a página e use busca, filtros, menu, formulário, consulta por preço e botões dos cards.
-3. No modo responsivo, confira a apresentação em desktop e celular e salve as duas capturas reais na pasta indicada.
-4. Em Elements > Layout, confira as colunas da grade CSS Grid.
+1. Abra o projeto em uma pasta nova e confira se a página carrega com estilos, imagens e mídia.
+2. No DevTools, aba Network, verifique se há arquivos com erro 404.
+3. No Console, teste busca, filtros, menu, formulário, consulta por preço e botões dos cards.
+4. Confira o layout em desktop e celular e salve uma captura real de cada formato.
+5. Verifique se as imagens aparecem no README do GitHub.
 
-Os testes finais em navegador e as capturas reais em desktop e celular ainda precisam ser concluídos antes do envio final.
+O código contém os recursos descritos no mapa, mas a conferência final em diferentes navegadores e a captura mobile ainda precisam ser realizadas antes da entrega.
